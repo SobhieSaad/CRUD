@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Symfony Users {% endblock %}
+
+{%block body %}
+<div >
+   <h1 style="color:orange"> {{user.UsrName}}</h1>
+   
+   <div class="row" style="color:Green">
+   <div class="col-xs-2 " style="font-weight:bold;margin-left:40px"> Email: </div>
+   <div class="col-xs-6 " style="margin-left:60px"> {{user.Email}} </div>
+   <div class="col-xs-4"></div>
+   </div>
+   <br>
+   <div class="row" style="color:Green">
+   <div class="col-xs-2" style="font-weight:bold;margin-left:40px"> Gender: </div>
+   <div class="col-xs-6" style="margin-left:60px"> {{user.Gender}} </div>
+   <div class="col-xs-4"></div>
+   </div>
+   <br>
+
+   <hr>
+   <a href="/">Go Back</a>
+   </div>
+{% endblock %}

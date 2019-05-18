@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Symfony Users {% endblock %}
+
+{%block body %}
+    {% if users %}
+        <table id="user" class="table table-striped">
+            <thead>
+                <tr>
+                    <th> User name </th>
+                    <th> E-mail </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td> {{ user.UsrName }}</td>
+                        <td>
+                            <a href="/users/{{user.id}}" class="btn btn-dark"> Show Details</a>
+                           
+                        </td>
+                        <td>
+                             <a href="#" class="btn btn-danger delete-user" 
+                             data-id="{{ user.id }}">Delete</a>
+                        </td>
+                        <td>
+                            <a href="/users/update/{{user.id}}" class="btn btn-light"> Update Details</a>
+                           
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No users to show</p>
+    {% endif %}
+{% endblock %}
+
+{% block javascripts %}
+<script src="/js/main.js"></script>
+{% endblock %}
